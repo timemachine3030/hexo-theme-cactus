@@ -14,7 +14,7 @@
     <span id="actions">
       <ul>
         <% if (page.prev) { %>
-        <li><a class="icon" href="<%- url_for(page.prev.path) %>"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li aria-hidden="true"><a class="icon" href="<%- url_for(page.prev.path) %>"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         <% } %>
         <% if (page.next) { %>
         <li><a class="icon" href="<%- url_for(page.next.path) %>"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -32,6 +32,7 @@
       <%- partial('_partial/post/share', { icon_class_name: '' }) %>
     </div>
     <div id="toc">
+      <span class="sr-only">Table of Contents</span>
       <%- toc(page.content) %>
     </div>
   </span>
